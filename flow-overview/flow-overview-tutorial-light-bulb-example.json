@@ -1,0 +1,591 @@
+{
+  "n": "",
+  "version": "0.0.1",
+  "mnmn": "SmartThings",
+  "vid": "SmartThings-smartthings-c2c-rgbw-color-bulb",
+  "dalias": "",
+  "daliasId": "",
+  "dtype": "",
+  "cts": "",
+  "schemaVersion": "2.0",
+  "minEngineVersion": "",
+  "sml": [
+    {
+      "capability": "powerSwitch",
+      "voiceActions": [
+        {
+          "action": "turnOff",
+          "href": "/capability/switch/main/0",
+          "payload": {},
+          "useGraph": true,
+          "graph": {
+            "graph": {
+              "graphId": "f875836a-389b-480c-a4ca-2f0712be2af5",
+              "version": "0.0.1",
+              "userAgent": {
+                "id": "IntelligenceDesigner",
+                "version": "1.0.0"
+              },
+              "nodes": [
+                {
+                  "nodeId": "70e40221-543d-437b-adc5-942bed8a4ea5",
+                  "nodeVer": "1.0",
+                  "nodeType": "start",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {},
+                  "triggerPorts": {
+                    "main": {
+                      "nodes": [
+                        "4eab4677-6db0-4ad0-8a69-e22db974f3f9"
+                      ],
+                      "portInfo": null
+                    }
+                  },
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {},
+                  "styles": {
+                    "x": 155,
+                    "y": 340
+                  }
+                },
+                {
+                  "nodeId": "4d2ca919-a5ca-46e0-aa54-459792f2d3b3",
+                  "nodeVer": "1.0",
+                  "nodeType": "capabilityCommand",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {
+                    "device": {
+                      "nodes": [],
+                      "portInfo": null
+                    }
+                  },
+                  "triggerPorts": {
+                    "success": {
+                      "nodes": [
+                        "fbca71ed-49c8-40a9-8e53-6043dcd7d1ae"
+                      ],
+                      "portInfo": null
+                    },
+                    "failure": {
+                      "nodes": [
+                        "9c41db45-dde4-489f-b8c6-3352e6bdc920"
+                      ],
+                      "portInfo": null
+                    }
+                  },
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "commands": {
+                      "dataType": "datatype.util.AFList",
+                      "dataValue": [
+                        {
+                          "dataType": "datatype.schema.AFCapabilityCommand",
+                          "dataValue": {
+                            "component": "main",
+                            "capability": "switch",
+                            "command": "off",
+                            "arguments": []
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "styles": {
+                    "x": 1395,
+                    "y": 560
+                  }
+                },
+                {
+                  "nodeId": "9c41db45-dde4-489f-b8c6-3352e6bdc920",
+                  "nodeVer": "1.0",
+                  "nodeType": "responseFeatureUnavailable",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {},
+                  "triggerPorts": {},
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {},
+                  "styles": {
+                    "x": 1635,
+                    "y": 760
+                  }
+                },
+                {
+                  "nodeId": "fbca71ed-49c8-40a9-8e53-6043dcd7d1ae",
+                  "nodeVer": "1.0",
+                  "nodeType": "responseSuccess",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {},
+                  "triggerPorts": {},
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {},
+                  "styles": {
+                    "x": 1675,
+                    "y": 440
+                  }
+                },
+                {
+                  "nodeId": "da9a85bc-0c5d-4583-ad34-38873e3298a1",
+                  "nodeVer": "1.0",
+                  "nodeType": "askSelection",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {
+                    "choices": {
+                      "nodes": [
+                        "4eab4677-6db0-4ad0-8a69-e22db974f3f9"
+                      ],
+                      "portInfo": null
+                    }
+                  },
+                  "triggerPorts": {
+                    "main": {
+                      "nodes": [
+                        "a8f00f54-1f23-4765-8685-d8ddd9992a02"
+                      ],
+                      "portInfo": null
+                    }
+                  },
+                  "valuePorts": {
+                    "index": {
+                      "name": "index"
+                    }
+                  },
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "handsFreeDialogue": {
+                      "dataType": "datatype.schema.AFDialogue",
+                      "dataValue": {
+                        "parameters": {},
+                        "dialogueId": "Rev_SamsungIoT_SPK_0_204_CommonCheck_HasRoom_Found_Multi",
+                        "template": "Which one do you want?\nWhich one?",
+                        "namespace": "system"
+                      }
+                    },
+                    "handsOnDialogue": {
+                      "dataType": "datatype.schema.AFDialogue",
+                      "dataValue": {
+                        "parameters": {},
+                        "dialogueId": "Rev_SamsungIoT_SPK_0_204_CommonCheck_HasRoom_Found_Multi",
+                        "template": "Which one do you want?\nWhich one?",
+                        "namespace": "system"
+                      }
+                    }
+                  },
+                  "styles": {
+                    "x": 495,
+                    "y": 360
+                  }
+                },
+                {
+                  "nodeId": "4eab4677-6db0-4ad0-8a69-e22db974f3f9",
+                  "nodeVer": "1.0",
+                  "nodeType": "getRoom",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {
+                    "location": {
+                      "nodes": [],
+                      "portInfo": null
+                    }
+                  },
+                  "triggerPorts": {
+                    "success": {
+                      "nodes": [
+                        "da9a85bc-0c5d-4583-ad34-38873e3298a1"
+                      ],
+                      "portInfo": null
+                    },
+                    "failure": {
+                      "nodes": [
+                        "9c41db45-dde4-489f-b8c6-3352e6bdc920"
+                      ],
+                      "portInfo": null
+                    }
+                  },
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {},
+                  "styles": {
+                    "x": 315,
+                    "y": 540
+                  }
+                },
+                {
+                  "nodeId": "a8f00f54-1f23-4765-8685-d8ddd9992a02",
+                  "nodeVer": "1.0",
+                  "nodeType": "capabilityAttribute",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {
+                    "device": {
+                      "nodes": [],
+                      "portInfo": null
+                    }
+                  },
+                  "triggerPorts": {
+                    "success": {
+                      "nodes": [
+                        "fdbca0b8-4814-4582-82aa-47f50994d80f"
+                      ],
+                      "portInfo": null
+                    },
+                    "failure": {
+                      "nodes": [],
+                      "portInfo": null
+                    }
+                  },
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "attribute": {
+                      "dataType": "datatype.schema.AFCapabilityAttribute",
+                      "dataValue": {
+                        "component": "main",
+                        "capability": "switch",
+                        "attribute": "switch",
+                        "property": {
+                          "name": "value",
+                          "dataType": "datatype.primitive.AFString"
+                        }
+                      }
+                    },
+                    "required": {
+                      "dataType": "datatype.primitive.AFBoolean",
+                      "dataValue": true
+                    }
+                  },
+                  "styles": {
+                    "x": 675,
+                    "y": 360
+                  }
+                },
+                {
+                  "nodeId": "fdbca0b8-4814-4582-82aa-47f50994d80f",
+                  "nodeVer": "1.0",
+                  "nodeType": "stringComparison",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {
+                    "leftValue": {
+                      "nodes": [
+                        "b01e21c9-49dc-4c28-9b16-cb56a05d2096"
+                      ],
+                      "portInfo": null
+                    },
+                    "rightValue": {
+                      "nodes": [
+                        "a8f00f54-1f23-4765-8685-d8ddd9992a02"
+                      ],
+                      "portInfo": null
+                    }
+                  },
+                  "triggerPorts": {
+                    "true": {
+                      "nodes": [
+                        "6f2ab5f1-896b-4116-93cf-75cbdc1f0728"
+                      ],
+                      "portInfo": null
+                    },
+                    "false": {
+                      "nodes": [
+                        "fdbb9fd0-93c4-439b-b179-3bcf48f94140"
+                      ],
+                      "portInfo": null
+                    }
+                  },
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "operator": {
+                      "dataType": "datatype.operator.StringComparisonOperator",
+                      "dataValue": "equals"
+                    }
+                  },
+                  "styles": {
+                    "x": 900,
+                    "y": 300
+                  }
+                },
+                {
+                  "nodeId": "b01e21c9-49dc-4c28-9b16-cb56a05d2096",
+                  "nodeVer": "1.0",
+                  "nodeType": "constant",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {},
+                  "triggerPorts": {},
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "value": {
+                      "dataType": "datatype.primitive.AFString",
+                      "dataValue": "off"
+                    }
+                  },
+                  "styles": {
+                    "x": 720,
+                    "y": 180
+                  }
+                },
+                {
+                  "nodeId": "6f2ab5f1-896b-4116-93cf-75cbdc1f0728",
+                  "nodeVer": "1.0",
+                  "nodeType": "response",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {},
+                  "triggerPorts": {
+                    "main": {
+                      "nodes": [],
+                      "portInfo": null
+                    }
+                  },
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "handsFreeDialogue": {
+                      "dataType": "datatype.schema.AFDialogue",
+                      "dataValue": {
+                        "parameters": {
+                          "Keyword": {
+                            "dataType": "datatype.schema.AFDialogueParameter",
+                            "dataValue": {
+                              "type": "system",
+                              "systemData": {
+                                "type": "Device"
+                              }
+                            }
+                          }
+                        },
+                        "dialogueId": "Rev_SamsungIoT_SPK_6_157_PowerOff_GoalSuccessful_YesOrNo_Yes",
+                        "template": "#{Keyword} is already off.\nIt's already off.",
+                        "namespace": "system"
+                      }
+                    },
+                    "handsOnDialogue": {
+                      "dataType": "datatype.schema.AFDialogue",
+                      "dataValue": {
+                        "parameters": {
+                          "Keyword": {
+                            "dataType": "datatype.schema.AFDialogueParameter",
+                            "dataValue": {
+                              "type": "system",
+                              "systemData": {
+                                "type": "Device"
+                              }
+                            }
+                          }
+                        },
+                        "dialogueId": "Rev_SamsungIoT_SPK_6_157_PowerOff_GoalSuccessful_YesOrNo_Yes",
+                        "template": "#{Keyword} is already off.\nIt's already off.",
+                        "namespace": "system"
+                      }
+                    }
+                  },
+                  "styles": {
+                    "x": 1175,
+                    "y": 160
+                  }
+                },
+                {
+                  "nodeId": "fdbb9fd0-93c4-439b-b179-3bcf48f94140",
+                  "nodeVer": "1.0",
+                  "nodeType": "askConfirmation",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {
+                    "RoomName": {
+                      "nodes": [
+                        "7cb1dc71-be4d-48ff-944c-e854041543c8"
+                      ],
+                      "portInfo": {
+                        "dataTypes": [
+                          "undefined"
+                        ],
+                        "minItems": 0,
+                        "maxItems": 1,
+                        "isCustomPort": true
+                      }
+                    }
+                  },
+                  "triggerPorts": {
+                    "no": {
+                      "nodes": [
+                        "c57b43e1-702f-4b3c-8fdc-370c157040cd"
+                      ],
+                      "portInfo": null
+                    },
+                    "yes": {
+                      "nodes": [
+                        "4d2ca919-a5ca-46e0-aa54-459792f2d3b3"
+                      ],
+                      "portInfo": null
+                    }
+                  },
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "handsFreeDialogue": {
+                      "dataType": "datatype.schema.AFDialogue",
+                      "dataValue": {
+                        "parameters": {
+                          "RoomName": {
+                            "dataType": "datatype.schema.AFDialogueParameter",
+                            "dataValue": {
+                              "type": "any"
+                            }
+                          }
+                        },
+                        "dialogueId": "Rev_SamsungIoT_SPK_0_20_CommonCheck_List_Read_Item",
+                        "template": "#{RoomName}",
+                        "namespace": "system"
+                      }
+                    },
+                    "handsOnDialogue": {
+                      "dataType": "datatype.schema.AFDialogue",
+                      "dataValue": {
+                        "parameters": {
+                          "RoomName": {
+                            "dataType": "datatype.schema.AFDialogueParameter",
+                            "dataValue": {
+                              "type": "any"
+                            }
+                          }
+                        },
+                        "dialogueId": "Rev_SamsungIoT_SPK_0_20_CommonCheck_List_Read_Item",
+                        "template": "#{RoomName}",
+                        "namespace": "system"
+                      }
+                    }
+                  },
+                  "styles": {
+                    "x": 1115,
+                    "y": 420
+                  }
+                },
+                {
+                  "nodeId": "7cb1dc71-be4d-48ff-944c-e854041543c8",
+                  "nodeVer": "1.0",
+                  "nodeType": "constant",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {},
+                  "triggerPorts": {},
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "value": {
+                      "dataType": "datatype.primitive.AFString",
+                      "dataValue": "Please confirm you want the switch off"
+                    }
+                  },
+                  "styles": {
+                    "x": 835,
+                    "y": 500
+                  }
+                },
+                {
+                  "nodeId": "c57b43e1-702f-4b3c-8fdc-370c157040cd",
+                  "nodeVer": "1.0",
+                  "nodeType": "response",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {
+                    "RoomName": {
+                      "nodes": [
+                        "f3e4c593-2e82-410f-8bee-9a9d38acc5f3"
+                      ],
+                      "portInfo": {
+                        "dataTypes": [
+                          "undefined"
+                        ],
+                        "minItems": 0,
+                        "maxItems": 1,
+                        "isCustomPort": true
+                      }
+                    }
+                  },
+                  "triggerPorts": {
+                    "main": {
+                      "nodes": [],
+                      "portInfo": null
+                    }
+                  },
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "handsFreeDialogue": {
+                      "dataType": "datatype.schema.AFDialogue",
+                      "dataValue": {
+                        "parameters": {
+                          "RoomName": {
+                            "dataType": "datatype.schema.AFDialogueParameter",
+                            "dataValue": {
+                              "type": "any"
+                            }
+                          }
+                        },
+                        "dialogueId": "Rev_SamsungIoT_SPK_0_20_CommonCheck_List_Read_Item",
+                        "template": "#{RoomName}",
+                        "namespace": "system"
+                      }
+                    },
+                    "handsOnDialogue": {
+                      "dataType": "datatype.schema.AFDialogue",
+                      "dataValue": {
+                        "parameters": {
+                          "RoomName": {
+                            "dataType": "datatype.schema.AFDialogueParameter",
+                            "dataValue": {
+                              "type": "any"
+                            }
+                          }
+                        },
+                        "dialogueId": "Rev_SamsungIoT_SPK_0_20_CommonCheck_List_Read_Item",
+                        "template": "#{RoomName}",
+                        "namespace": "system"
+                      }
+                    }
+                  },
+                  "styles": {
+                    "x": 1535,
+                    "y": 220
+                  }
+                },
+                {
+                  "nodeId": "f3e4c593-2e82-410f-8bee-9a9d38acc5f3",
+                  "nodeVer": "1.0",
+                  "nodeType": "constant",
+                  "isStateful": true,
+                  "group": null,
+                  "inputPorts": {},
+                  "triggerPorts": {},
+                  "valuePorts": {},
+                  "triggerInPorts": {},
+                  "configurations": {
+                    "value": {
+                      "dataType": "datatype.primitive.AFString",
+                      "dataValue": "Not turning off the light"
+                    }
+                  },
+                  "styles": {
+                    "x": 1375,
+                    "y": 380
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
